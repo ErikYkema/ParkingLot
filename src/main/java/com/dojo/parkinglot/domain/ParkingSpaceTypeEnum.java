@@ -1,4 +1,4 @@
-package com.bol.dojo.parkinglot.Parking;
+package com.dojo.parkinglot.domain;
 
 public enum ParkingSpaceTypeEnum {
     ELECTRIC,

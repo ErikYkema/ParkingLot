@@ -1,4 +1,6 @@
-package com.bol.dojo.parkinglot.Parking;
+package com.dojo.parkinglot.parking;
+
+import com.dojo.parkinglot.domain.ParkingSpaceTypeEnum;
 
 public class ParkingSpaceFactory {
     public static ParkingSpace createParkingSpace(ParkingSpaceTypeEnum type, Location location) {

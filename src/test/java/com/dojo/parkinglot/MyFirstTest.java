@@ -1,4 +1,4 @@
-package com.bol.dojo.parkinglot;
+package com.dojo.parkinglot;
 
 import org.junit.Test;
 

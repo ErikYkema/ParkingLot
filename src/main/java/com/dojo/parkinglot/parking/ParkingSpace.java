@@ -1,6 +1,4 @@
-package com.bol.dojo.parkinglot.Parking;
-
-import java.util.List;
+package com.dojo.parkinglot.parking;
 
 public class ParkingSpace {
     private Location location;

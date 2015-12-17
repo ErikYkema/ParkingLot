@@ -1,4 +1,4 @@
-package com.bol.dojo.parkinglot.Parking;
+package com.dojo.parkinglot.parking;
 
 public class PSElectric extends ParkingSpace {
     public PSElectric (Location location) {

@@ -1,4 +1,4 @@
-package com.bol.dojo.parkinglot.Tools;
+package com.dojo.parkinglot.tools;
 
 import java.sql.SQLException;
 

@@ -1,5 +1,5 @@
-package com.bol.dojo.parkinglot;
-import com.bol.dojo.parkinglot.Tools.Exceptions;
+package com.dojo.parkinglot;
+import com.dojo.parkinglot.tools.Exceptions;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
