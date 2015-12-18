@@ -110,7 +110,7 @@
                     -->
                     <effort>Max</effort>
                     <!-- Reports all bugs (other values are medium and max) -->
-                    <threshold>Low</threshold>
+                    <threshold>medium</threshold>
                     <!-- Produces XML report -->
                     <xmlOutput>true</xmlOutput>
                 </configuration>
