@@ -1,16 +1,12 @@
 package com.dojo.parkinglot.parking;
 
-import java.util.Date;
+import com.dojo.parkinglot.users.Vehicle;
 
-public class ParkingSpace {
-    private Location location;
-    private Date startUsageDateTime; // TODO move to class ParkingSpaceUsage?
-    private boolean isInUse; // idem
+/**
+ * Created by oriezebos on 27-12-2015.
+ */
+public interface ParkingSpace {
 
-    public ParkingSpace() {
-    }
+    public void parkVehicle(Vehicle vehicle);
 
-    public ParkingSpace(Location location) {
-        this.location = location;
-    }
 }
