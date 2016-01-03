@@ -6,6 +6,9 @@ public class Car implements Vehicle {
     private final ParkingSpaceTypeEnum type = ParkingSpaceTypeEnum.GENERIC;
     private String licensePlate;
 
+    public Car() {
+    }
+
     @Override
     public ParkingSpaceTypeEnum getType() {
         return type;
