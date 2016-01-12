@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 // TODO afmaken
+//@Singleton TODO
 public class ParkingLot {
     // defines the properties of the parking
     // TODO get properties from DB or property file

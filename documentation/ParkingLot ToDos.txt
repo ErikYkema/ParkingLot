@@ -1,4 +1,6 @@
 TODO UNIT TESTS!
+TODO JSP SETUP
+
 TODO create class parking lot (Singleton/server)
 TODO create parking space type subclasses (attribs/methods)
 TODO create parking lot (init)
@@ -18,8 +20,6 @@ TODO jsp: request parking space
 TODO jsp: show occupied spaces
 TODO jsp: checkout parking space
 TODO add interfaces
-
-
 
 From our initial Excel List:
 
