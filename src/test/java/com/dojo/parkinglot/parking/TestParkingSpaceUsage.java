@@ -24,7 +24,7 @@ public class TestParkingSpaceUsage {
     @Test
     public void assertThatNewParkingSpaceCountsDuration() {
         Long duration = 100L;
-        ParkingSpaceUsage parkingSpaceUsage = new ParkingSpaceUsage(car, location);
+        ParkingSpaceUsage parkingSpaceUsage = new ParkingSpaceUsage(car);
         try {
             Thread.sleep(duration);
         } catch(InterruptedException ex) {
