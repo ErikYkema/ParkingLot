@@ -4,10 +4,8 @@ import com.dojo.parkinglot.users.Vehicle;
 
 public class RegularParkingSpace implements ParkingSpace {
 
-    private Location location;
+    public RegularParkingSpace() {
 
-    public RegularParkingSpace(Location location) {
-        this.location = location;
     }
 
     @Override

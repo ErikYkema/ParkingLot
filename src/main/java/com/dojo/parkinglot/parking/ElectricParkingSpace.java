@@ -4,8 +4,7 @@ import com.dojo.parkinglot.users.Vehicle;
 
 public class ElectricParkingSpace extends RegularParkingSpace {
 
-    public ElectricParkingSpace(Location location) {
-        super(location);
+    public ElectricParkingSpace() {
     }
 
     @Override

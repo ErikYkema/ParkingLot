@@ -12,8 +12,8 @@ public class ParkingSpaceUsage {
 
     private Date startUsageDateTime;
 
-    public ParkingSpaceUsage(Vehicle vehicle, Location location) {
-        this.parkingSpace = ParkingSpaceFactory.createParkingSpace(vehicle.getType(), location);
+    public ParkingSpaceUsage(Vehicle vehicle) {
+        this.parkingSpace = ParkingSpaceFactory.createParkingSpace(vehicle.getType());
         this.startUsageDateTime = new Date();
         this.vehicle = vehicle;
     }
@@ -30,7 +30,7 @@ public class ParkingSpaceUsage {
         return startUsageDateTime;
     }
 
-    public Long getParkingDuration () {
+    public Long getParkingDuration() {
         return new Date().getTime() - startUsageDateTime.getTime();
     }
 }

@@ -2,11 +2,11 @@ package com.dojo.parkinglot.users;
 
 import com.dojo.parkinglot.domain.ParkingSpaceTypeEnum;
 
-public class Car implements Vehicle {
+public class GenericCar implements Vehicle {
     private final ParkingSpaceTypeEnum type = ParkingSpaceTypeEnum.GENERIC;
     private String licensePlate;
 
-    public Car() {
+    public GenericCar() {
     }
 
     @Override

@@ -1,6 +1,6 @@
 package com.dojo.parkinglot.parking;
 
-import com.dojo.parkinglot.users.Car;
+import com.dojo.parkinglot.users.GenericCar;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,13 +19,10 @@ import static org.hamcrest.core.Is.is;
 public class TestParkingSpaceUsage {
 
     @Autowired
-    private Location location;
-
-    @Autowired
-    private Car car;
+    private GenericCar car;
 
     @Test
-    public void newParkingSpaceUsageShouldBeCreated () {
+    public void assertThatNewParkingSpaceCountsDuration() {
         Long duration = 100L;
         ParkingSpaceUsage parkingSpaceUsage = new ParkingSpaceUsage(car, location);
         try {
