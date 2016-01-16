@@ -1,7 +1,7 @@
 package com.dojo.parkinglot.parking;
 
 import com.dojo.parkinglot.domain.ParkingSpaceTypeEnum;
-import com.dojo.parkinglot.users.GenericCar;
+import com.dojo.parkinglot.users.ElectricCar;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +16,13 @@ import static org.hamcrest.core.Is.is;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:testApplicationContext.xml")
-public class TestGenericCar {
+public class TestCarTypes {
 
     @Autowired
-    private GenericCar car;
+    private ElectricCar electricCar;
 
-    //TODO type is double now, remove (use instanceof())
     @Test
     public void newCarShouldHaveRegularType() {
-        assertThat(car.getType().equals(ParkingSpaceTypeEnum.GENERIC), is(true));
+        assertThat(electricCar.getType().equals(ParkingSpaceTypeEnum.ELECTRIC), is(true));
     }
 }
