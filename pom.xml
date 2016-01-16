@@ -10,6 +10,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <language.level>1.8</language.level>
+        <org.springframework.version>3.0.5.RELEASE</org.springframework.version>
     </properties>
 
     <build>
@@ -20,8 +22,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${language.level}</source>
+                    <target>${language.level}</target>
                 </configuration>
             </plugin>
         </plugins>
@@ -66,16 +68,36 @@
             <artifactId>checkstyle</artifactId>
             <version>5.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.google.code.findbugs</groupId>
             <artifactId>findbugs</artifactId>
             <version>3.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>org.springframework.test</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>org.springframework.context</artifactId>
+            <version>${org.springframework.version}</version>
+            <scope>test</scope>
+        </dependency>
+
         <!--<dependency>-->
-            <!--<groupId>com.google.code.findbugs</groupId>-->
-            <!--<artifactId>jsr305</artifactId>-->
-            <!--<version>3.0.1</version>-->
+        <!--<groupId>com.google.code.findbugs</groupId>-->
+        <!--<artifactId>jsr305</artifactId>-->
+        <!--<version>3.0.1</version>-->
         <!--</dependency>-->
+
 
     </dependencies>
 
@@ -107,21 +129,21 @@
                     -->
                     <effort>Max</effort>
                     <!-- Reports all bugs (other values are medium and max) -->
-                    <threshold>Low</threshold>
+                    <threshold>medium</threshold>
                     <!-- Produces XML report -->
                     <xmlOutput>true</xmlOutput>
                 </configuration>
                 <!--<executions>-->
-                    <!--&lt;!&ndash;-->
-                        <!--Ensures that FindBugs inspects source code when project is compiled.-->
-                    <!--&ndash;&gt;-->
-                    <!--<execution>-->
-                        <!--<id>analyze-compile</id>-->
-                        <!--<phase>compile</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>check</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
+                <!--&lt;!&ndash;-->
+                <!--Ensures that FindBugs inspects source code when project is compiled.-->
+                <!--&ndash;&gt;-->
+                <!--<execution>-->
+                <!--<id>analyze-compile</id>-->
+                <!--<phase>compile</phase>-->
+                <!--<goals>-->
+                <!--<goal>check</goal>-->
+                <!--</goals>-->
+                <!--</execution>-->
                 <!--</executions>-->
             </plugin>
         </plugins>

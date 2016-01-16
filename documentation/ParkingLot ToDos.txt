@@ -1,0 +1,47 @@
+TODO UNIT TESTS!
+TODO JSP SETUP
+
+TODO create class parking lot (Singleton/server)
+TODO create parking space type subclasses (attribs/methods)
+TODO create parking lot (init)
+TODO create known vehicles and users and cards (init)
+TODO use case: request parking space (class)
+- enter card# or license#
+-- Guests have guest cards with id# guest1-guest10
+(wish: if electric, request confirmation for need for electric space, and pay based on used time??)
+- app checks availability and assigns space to user
+- reports assigned space#
+TODO use case: checkout parking space (class)
+- enter card# or license#
+- app frees space
+- reports "Thanks and goodbye. Your space # has been freed."
+TODO use case: show occupied spaces (class)
+TODO jsp: request parking space
+TODO jsp: show occupied spaces
+TODO jsp: checkout parking space
+TODO add interfaces
+
+From our initial Excel List:
+
+DONE Create GIT repository
+DONE Create DB schema on DHOMDEV
+DONE Create scrumboard/backlog
+DONE create base project with pom and app context
+DONE create run config, MVN
+create class diagram
+create use cases
+design interface classes
+implement domain model (classes)
+implement factory
+implement registration class
+implement db objects vehicle properties
+DONE setup Junit test, TDD
+setup DAO structure
+setup Spring, autowiring
+implement rest connected check out gate
+implement rest connected check in gate
+make checkout gate asynchroneous (JMS?)
+setup JSP, JMS base
+generate Javadoc
+add AOP filters
+Nice to have: Stub/Mockito

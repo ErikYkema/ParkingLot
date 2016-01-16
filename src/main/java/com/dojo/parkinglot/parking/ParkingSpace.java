@@ -1,12 +1,12 @@
 package com.dojo.parkinglot.parking;
 
-public class ParkingSpace {
-    private Location location;
+import com.dojo.parkinglot.users.Vehicle;
 
-    public ParkingSpace() {
-    }
+/**
+ * Created by oriezebos on 27-12-2015.
+ */
+public interface ParkingSpace {
 
-    public ParkingSpace(Location location) {
-        this.location = location;
-    }
+    public void parkVehicle(Vehicle vehicle);
+
 }
