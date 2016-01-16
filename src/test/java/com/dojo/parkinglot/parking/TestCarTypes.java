@@ -2,6 +2,7 @@ package com.dojo.parkinglot.parking;
 
 import com.dojo.parkinglot.domain.ParkingSpaceTypeEnum;
 import com.dojo.parkinglot.users.ElectricCar;
+import com.dojo.parkinglot.users.GenericCar;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,16 @@ public class TestCarTypes {
     private ElectricCar electricCar;
 
     @Test
-    public void newCarShouldHaveRegularType() {
+    public void newElectricCarShouldHaveCorrectType() {
         assertThat(electricCar.getType().equals(ParkingSpaceTypeEnum.ELECTRIC), is(true));
+    }
+
+    @Autowired
+    private GenericCar car;
+
+    //TODO type is double now, remove (use instanceof())
+    @Test
+    public void newGenericCarShouldHaveCorrectType() {
+        assertThat(car.getType().equals(ParkingSpaceTypeEnum.GENERIC), is(true));
     }
 }

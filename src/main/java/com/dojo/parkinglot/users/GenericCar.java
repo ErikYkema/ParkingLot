@@ -1,7 +1,9 @@
 package com.dojo.parkinglot.users;
 
 import com.dojo.parkinglot.domain.ParkingSpaceTypeEnum;
+import org.springframework.stereotype.Component;
 
+@Component
 public class GenericCar implements Vehicle {
     private final ParkingSpaceTypeEnum type = ParkingSpaceTypeEnum.GENERIC;
     private String licensePlate;

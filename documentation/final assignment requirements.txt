@@ -2,14 +2,15 @@ Hi everyone,
 
 As you can see I have planned the date for the presentations of the final assignment on 26th February.
 
-The deadline for the assignment is 1 week before that, so we have time to evaluate the solutions.
+The deadline for the assignment is 1 week before that (19 Feb), so we have time to evaluate the solutions.
 
 Kind regards,
 Jeroen & Tristan
 
 From: Tristan Spruijt <tspruijt@bol.com>
 Date: Tuesday 1 December 2015 10:02
-To: Erik Ykema <eykema@bol.com>, Oscar Riezebos <oriezebos@bol.com>, Sarath Sasidharan <ssasidharan@bol.com>, Jeroen van Kleef <jvankleef@bol.com>, Kim Vlaskamp <kvlaskamp@bol.com>, Baeke Westerhof <bwesterhof@bol.com>, Mike van Zon <mvanzon@bol.com>, Petra Hoefs <phoefs@bol.com>, Mark Nijenhuis <mnijenhuis@bol.com>
+To: Erik Ykema <eykema@bol.com>, Oscar Riezebos <oriezebos@bol.com>, Sarath Sasidharan <ssasidharan@bol.com>, Jeroen van Kleef <jvankleef@bol.com>,
+Kim Vlaskamp <kvlaskamp@bol.com>, Baeke Westerhof <bwesterhof@bol.com>, Mike van Zon <mvanzon@bol.com>, Petra Hoefs <phoefs@bol.com>, Mark Nijenhuis <mnijenhuis@bol.com>
 Cc: Jeroen Ruijgers <jruijgers@bol.com>
 Subject: Final Assignment
 
@@ -23,8 +24,9 @@ First you will create a small application which includes everything you learned:
 •	A GIT repository needs to be handed over an will be used to evaluate the point mentioned above
 •	The application should store it's data in a database of your choice
 (preferrably without the need to install one, yes the coaches are lazy ;) )
-•	The application should have a rest interface
-•	The application should have a web interface (which might use the rest inferface if you like)
+•	The application should have a REST interface
+•	The application should have a WEB interface (which might use the rest inferface if you like)
+
 The deadline and the presentations will be in February.
 Regards,
 The coaches
