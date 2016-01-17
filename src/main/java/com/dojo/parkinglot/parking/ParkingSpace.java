@@ -7,6 +7,7 @@ import com.dojo.parkinglot.users.Vehicle;
  */
 public interface ParkingSpace {
 
+
     public void parkVehicle(Vehicle vehicle);
 
 }

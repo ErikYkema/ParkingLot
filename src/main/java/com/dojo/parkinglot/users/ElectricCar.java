@@ -1,10 +1,17 @@
 package com.dojo.parkinglot.users;
 
 import com.dojo.parkinglot.domain.ParkingSpaceTypeEnum;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+
+import java.lang.invoke.MethodHandles;
 
 @Component
 public class ElectricCar implements Vehicle {
+    private final static Logger LOG =
+            LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
     private final ParkingSpaceTypeEnum type = ParkingSpaceTypeEnum.ELECTRIC;
     private String licensePlate;
 

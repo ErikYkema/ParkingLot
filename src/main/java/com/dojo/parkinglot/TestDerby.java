@@ -1,6 +1,9 @@
 package com.dojo.parkinglot;
 import com.dojo.parkinglot.tools.Exceptions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.lang.invoke.MethodHandles;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -11,6 +14,9 @@ import java.sql.ResultSetMetaData;
 
 public class TestDerby
 {
+    private final static Logger LOG =
+            LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
     private static String dbURL = "jdbc:derby://localhost:1527/myDB;create=true;user=me;password=mine";
     private static String tableName = "restaurants";
     // jdbc Connection

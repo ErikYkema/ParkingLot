@@ -3,11 +3,16 @@ package com.dojo.parkinglot.parking;
 import com.dojo.parkinglot.users.ElectricCar;
 import com.dojo.parkinglot.users.GenericCar;
 import com.dojo.parkinglot.users.Vehicle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.Map;
 
 public class ParkingLot {
+    private final static Logger LOG =
+            LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     // defines the properties of the parking
     // TODO get properties from DB or property file
     private static final Integer nrOfGenericSpaces = 10;

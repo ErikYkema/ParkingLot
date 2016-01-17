@@ -12,9 +12,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 
-/**
- * Created by oriezebos on 28-12-2015.
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:testApplicationContext.xml")
 public class TestCarTypes {
@@ -30,7 +27,7 @@ public class TestCarTypes {
     @Autowired
     private GenericCar car;
 
-    //TODO type is double now, remove (use instanceof())
+    //TODO type is double now, remove (or use getClass())
     @Test
     public void newGenericCarShouldHaveCorrectType() {
         assertThat(car.getType().equals(ParkingSpaceTypeEnum.GENERIC), is(true));

@@ -1,13 +1,19 @@
 package com.dojo.parkinglot.parking;
 
 import com.dojo.parkinglot.users.Vehicle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.Map;
 
 @Component
 public class FreeSpaceCounter {
+    private final static Logger LOG =
+            LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
     private Map<Class, Integer> freeSpace = new HashMap<>();
 
     public void setFreeSpace(Class aClass, Integer size) {
