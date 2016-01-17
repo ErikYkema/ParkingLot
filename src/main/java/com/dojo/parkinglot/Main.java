@@ -1,12 +1,9 @@
 package com.dojo.parkinglot;
 import com.dojo.parkinglot.parking.ParkingLot;
 import com.dojo.parkinglot.parking.ParkingSpaceUsage;
-import com.dojo.parkinglot.users.ElectricCar;
 import com.dojo.parkinglot.users.Vehicle;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 public class Main {
