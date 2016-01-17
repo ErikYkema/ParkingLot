@@ -5,12 +5,14 @@ import com.dojo.parkinglot.domain.car.GenericCar;
 import com.dojo.parkinglot.domain.car.Vehicle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.Map;
 
 //TODO @Singleton?
+@Component
 public class ParkingLot {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
@@ -19,13 +21,16 @@ public class ParkingLot {
     private static final Integer nrOfGenericSpaces = 10;
     private static final Integer nrOfElectricSpaces = 10;
 
-    private Map<Vehicle, ParkingSpaceUsage> parkingSpaceUsages = new HashMap<>();
-
-    private FreeSpaceCounter freeSpaceCounter = new FreeSpaceCounter();
-
     public ParkingLot() {
         freeSpaceCounter.setFreeSpace(ElectricCar.class, nrOfElectricSpaces);
         freeSpaceCounter.setFreeSpace(GenericCar.class, nrOfGenericSpaces);
+    }
+
+    private Map<Vehicle, ParkingSpaceUsage> parkingSpaceUsages = new HashMap<>();
+
+    private FreeSpaceCounter freeSpaceCounter = new FreeSpaceCounter();
+    public FreeSpaceCounter getFreeSpaceCounter() {
+        return freeSpaceCounter;
     }
 
     public Map<Vehicle, ParkingSpaceUsage> getParkingSpaceUsages() {

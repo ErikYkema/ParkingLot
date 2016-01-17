@@ -61,12 +61,12 @@ public class TestFreeSpaceCounter {
         freeSpaceCounter.useSpace(car);
         assertThat("use a car", freeSpaceCounter.getFreeSpace(car), is(NR_OF_CARS - 1));
         freeSpaceCounter.release(car);
-        assertThat("use a car", freeSpaceCounter.getFreeSpace(car), is(NR_OF_CARS));
+        assertThat("release", freeSpaceCounter.getFreeSpace(car), is(NR_OF_CARS));
 
         freeSpaceCounter.useSpace(eCar);
         assertThat("use a car", freeSpaceCounter.getFreeSpace(eCar), is(NR_OF_ECARS - 1));
         freeSpaceCounter.release(eCar);
-        assertThat("use a car", freeSpaceCounter.getFreeSpace(eCar), is(NR_OF_ECARS));
+        assertThat("release", freeSpaceCounter.getFreeSpace(eCar), is(NR_OF_ECARS));
     }
 
     @Test
