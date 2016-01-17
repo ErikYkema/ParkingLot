@@ -1,4 +1,4 @@
-package com.dojo.parkinglot.users;
+package com.dojo.parkinglot.domain.users;
 
 import com.dojo.parkinglot.domain.BuildingsEnum;
 import org.slf4j.Logger;

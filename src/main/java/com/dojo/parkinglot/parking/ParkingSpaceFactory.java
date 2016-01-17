@@ -1,6 +1,9 @@
 package com.dojo.parkinglot.parking;
 
-import com.dojo.parkinglot.domain.ParkingSpaceTypeEnum;
+import com.dojo.parkinglot.domain.parkingspace.ElectricParkingSpace;
+import com.dojo.parkinglot.domain.parkingspace.ParkingSpace;
+import com.dojo.parkinglot.domain.parkingspace.ParkingSpaceTypeEnum;
+import com.dojo.parkinglot.domain.parkingspace.RegularParkingSpace;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
