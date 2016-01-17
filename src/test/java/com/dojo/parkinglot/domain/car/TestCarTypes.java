@@ -1,8 +1,6 @@
-package com.dojo.parkinglot.parking;
+package com.dojo.parkinglot.domain.car;
 
 import com.dojo.parkinglot.domain.parkingspace.ParkingSpaceTypeEnum;
-import com.dojo.parkinglot.domain.cars.ElectricCar;
-import com.dojo.parkinglot.domain.cars.GenericCar;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

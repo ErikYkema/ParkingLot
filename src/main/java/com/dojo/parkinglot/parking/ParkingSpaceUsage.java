@@ -1,7 +1,8 @@
 package com.dojo.parkinglot.parking;
 
 import com.dojo.parkinglot.domain.parkingspace.ParkingSpace;
-import com.dojo.parkinglot.domain.cars.Vehicle;
+import com.dojo.parkinglot.domain.car.Vehicle;
+import com.dojo.parkinglot.domain.parkingspace.ParkingSpaceFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

@@ -1,8 +1,8 @@
 package com.dojo.parkinglot.parking;
 
-import com.dojo.parkinglot.domain.cars.ElectricCar;
-import com.dojo.parkinglot.domain.cars.GenericCar;
-import com.dojo.parkinglot.domain.cars.Vehicle;
+import com.dojo.parkinglot.domain.car.ElectricCar;
+import com.dojo.parkinglot.domain.car.GenericCar;
+import com.dojo.parkinglot.domain.car.Vehicle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

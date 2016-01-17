@@ -1,4 +1,4 @@
-package com.dojo.parkinglot.domain.cars;
+package com.dojo.parkinglot.domain.car;
 
 import com.dojo.parkinglot.domain.parkingspace.ParkingSpaceTypeEnum;
 import org.slf4j.Logger;
@@ -8,12 +8,15 @@ import org.springframework.stereotype.Component;
 import java.lang.invoke.MethodHandles;
 
 @Component
-public class ElectricCar implements Vehicle {
+public class GenericCar implements Vehicle {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    private final ParkingSpaceTypeEnum type = ParkingSpaceTypeEnum.ELECTRIC;
+    private final ParkingSpaceTypeEnum type = ParkingSpaceTypeEnum.GENERIC;
     private String licensePlate;
+
+    public GenericCar() {
+    }
 
     @Override
     public ParkingSpaceTypeEnum getType() {

@@ -1,4 +1,4 @@
-package com.dojo.parkinglot.domain.cars;
+package com.dojo.parkinglot.domain.car;
 
 import com.dojo.parkinglot.domain.parkingspace.ParkingSpaceTypeEnum;
 

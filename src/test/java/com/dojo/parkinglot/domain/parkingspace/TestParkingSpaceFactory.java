@@ -1,8 +1,5 @@
-package com.dojo.parkinglot.parking;
+package com.dojo.parkinglot.domain.parkingspace;
 
-import com.dojo.parkinglot.domain.parkingspace.ElectricParkingSpace;
-import com.dojo.parkinglot.domain.parkingspace.ParkingSpaceTypeEnum;
-import com.dojo.parkinglot.domain.parkingspace.RegularParkingSpace;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
