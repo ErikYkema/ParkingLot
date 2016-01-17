@@ -10,6 +10,7 @@ import java.lang.invoke.MethodHandles;
 import java.util.HashMap;
 import java.util.Map;
 
+//TODO @Singleton?
 public class ParkingLot {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
@@ -17,6 +18,7 @@ public class ParkingLot {
     // TODO get properties from DB or property file
     private static final Integer nrOfGenericSpaces = 10;
     private static final Integer nrOfElectricSpaces = 10;
+
     private Map<Vehicle, ParkingSpaceUsage> parkingSpaceUsages = new HashMap<>();
 
     private FreeSpaceCounter freeSpaceCounter = new FreeSpaceCounter();

@@ -8,6 +8,6 @@ import com.dojo.parkinglot.domain.car.Vehicle;
 public interface ParkingSpace {
 
 
-    public void parkVehicle(Vehicle vehicle);
+    void parkVehicle(Vehicle vehicle);
 
 }

@@ -4,5 +4,5 @@ import com.dojo.parkinglot.domain.parkingspace.ParkingSpaceTypeEnum;
 
 public interface Vehicle {
 
-    public ParkingSpaceTypeEnum getType();
+    ParkingSpaceTypeEnum getType();
 }

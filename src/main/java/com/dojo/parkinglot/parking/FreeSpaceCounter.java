@@ -14,9 +14,12 @@ public class FreeSpaceCounter {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
+    private Map<Class, Integer> maxFreeSpace = new HashMap<>();
+
     private Map<Class, Integer> freeSpace = new HashMap<>();
 
     public void setFreeSpace(Class aClass, Integer size) {
+        maxFreeSpace.put(aClass, size);
         freeSpace.put(aClass, size);
     }
 
@@ -38,5 +41,13 @@ public class FreeSpaceCounter {
             return true;
         }
         return false;
+    }
+
+    public void release(Vehicle vehicle) {
+        if (freeSpace.get(vehicle.getClass()) < maxFreeSpace.get(vehicle.getClass())) {
+            freeSpace.put(vehicle.getClass(), freeSpace.get(vehicle.getClass()) + 1);
+        } else {
+            throw new RuntimeException("Cannot release beyond upper limit!");
+        }
     }
 }

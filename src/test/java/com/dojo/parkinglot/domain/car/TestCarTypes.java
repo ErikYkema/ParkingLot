@@ -14,13 +14,7 @@ import static org.hamcrest.core.Is.is;
 @ContextConfiguration(locations = "classpath:testApplicationContext.xml")
 public class TestCarTypes {
 
-    @Autowired
-    private ElectricCar electricCar;
-
-    @Test
-    public void newElectricCarShouldHaveCorrectType() {
-        assertThat(electricCar.getType().equals(ParkingSpaceTypeEnum.ELECTRIC), is(true));
-    }
+    private final static String licensePlate = "AA-001-001";
 
     @Autowired
     private GenericCar car;
@@ -29,5 +23,17 @@ public class TestCarTypes {
     @Test
     public void newGenericCarShouldHaveCorrectType() {
         assertThat(car.getType().equals(ParkingSpaceTypeEnum.GENERIC), is(true));
+        car.setLicensePlate(licensePlate);
+        assertThat("incorrect license plate", car.getLicensePlate(), is(licensePlate));
     }
+
+    @Autowired
+    private ElectricCar electricCar;
+
+    @Test
+    public void newElectricCarShouldHaveCorrectType() {
+        assertThat(electricCar.getType().equals(ParkingSpaceTypeEnum.ELECTRIC), is(true));
+
+    }
+
 }
