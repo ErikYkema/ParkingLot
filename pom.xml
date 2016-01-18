@@ -27,6 +27,13 @@
                     <target>${language.level}</target>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.3.0.v20150612</version>
+            </plugin>
+
         </plugins>
     </build>
     <dependencies>
@@ -144,6 +151,18 @@
             <version>3.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
 
     </dependencies>
 
@@ -162,6 +181,7 @@
                     </reportSet>
                 </reportSets>
             </plugin>
+
             <plugin>
                 <!--http://gleclaire.github.io/findbugs-maven-plugin/usage.html-->
                 <groupId>org.codehaus.mojo</groupId>
@@ -192,6 +212,7 @@
                 <!--</execution>-->
                 <!--</executions>-->
             </plugin>
+
         </plugins>
     </reporting>
 

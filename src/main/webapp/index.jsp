@@ -1,5 +1,9 @@
 <html>
+<link href="resources\css\screen.css" rel="stylesheet">
 <body>
-<h2>Hello World!</h2>
+<h1>Welcome at Erik & Oscar parking</h1>
+
+<image src="resources\image\parking.jpg"></a>
+
 </body>
 </html>
