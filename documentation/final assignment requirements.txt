@@ -25,7 +25,7 @@ First you will create a small application which includes everything you learned:
 •	The application should store it's data in a database of your choice
 (preferrably without the need to install one, yes the coaches are lazy ;) )
 •	The application should have a REST interface
-•	The application should have a WEB interface (which might use the rest inferface if you like)
+•	The application should have a WEB interface (which might use the REST inferface if you like)
 
 The deadline and the presentations will be in February.
 Regards,

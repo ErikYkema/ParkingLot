@@ -9,6 +9,7 @@
 <link href="resources\css\screen.css" rel="stylesheet">
 </head>
 <body>
+TODO: add usage overview: car type - max number - current number => separate jsp, to be included here...
 	<H1>${message}</H1>
 </body>
 </html>

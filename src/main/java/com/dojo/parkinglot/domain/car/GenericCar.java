@@ -18,6 +18,10 @@ public class GenericCar implements Vehicle {
     public GenericCar() {
     }
 
+    public GenericCar(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
     @Override
     public ParkingSpaceTypeEnum getType() {
         return type;

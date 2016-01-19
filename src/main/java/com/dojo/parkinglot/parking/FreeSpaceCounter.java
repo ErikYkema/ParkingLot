@@ -14,6 +14,9 @@ public class FreeSpaceCounter {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
+    public FreeSpaceCounter() {
+    }
+
     private Map<Class, Integer> maxFreeSpace = new HashMap<>();
 
     private Map<Class, Integer> freeSpace = new HashMap<>();
@@ -37,7 +40,7 @@ public class FreeSpaceCounter {
     // TODO raise exception and not return boolean?
     public boolean useSpace(Vehicle vehicle) {
         if (hasSpace(vehicle)) {
-            freeSpace.put(vehicle.getClass(), freeSpace.get(vehicle.getClass()) - 1);
+            freeSpace.put(vehicle.getClass(), getFreeSpace(vehicle) - 1);
             return true;
         }
         return false;
@@ -45,7 +48,7 @@ public class FreeSpaceCounter {
 
     public void release(Vehicle vehicle) {
         if (freeSpace.get(vehicle.getClass()) < maxFreeSpace.get(vehicle.getClass())) {
-            freeSpace.put(vehicle.getClass(), freeSpace.get(vehicle.getClass()) + 1);
+            freeSpace.put(vehicle.getClass(), getFreeSpace(vehicle) + 1);
         } else {
             throw new RuntimeException("Cannot release beyond upper limit!");
         }

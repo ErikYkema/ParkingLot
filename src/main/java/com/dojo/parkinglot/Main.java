@@ -4,6 +4,7 @@ import com.dojo.parkinglot.parking.ParkingSpaceUsage;
 import com.dojo.parkinglot.domain.car.Vehicle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
@@ -12,9 +13,8 @@ import java.util.Map;
 public class Main {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-
     public static void main(String[] args) throws IOException{
-        ParkingLot parkingLot = new ParkingLot();
+        ParkingLot parkingLot = ParkingLot.getParkingLot();
         LOG.info("Hello world!");
         LOG.debug("Hello world!");
         Map<Vehicle, ParkingSpaceUsage> parkingSpaceUsageList = parkingLot.getParkingSpaceUsages();

@@ -10,7 +10,4 @@
     <context:annotation-config/>
     <context:component-scan base-package="com.dojo.parkinglot" />
 
-    <!--<bean id="genericCar" class="com.dojo.parkinglot.domain.carGenericCar"/>-->
-    <!--<bean id="electricCar" class="com.dojo.parkinglot.domain.carElectricCar"/>-->
-
 </beans>

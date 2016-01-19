@@ -1,28 +1,36 @@
-TODO UNIT TESTS!
-TODO JSP SETUP
+WIP TODO UNIT TESTS!
+WIP TODO JSP SETUP
 
-TODO create class parking lot (Singleton/server)
-TODO create parking space type subclasses (attribs/methods)
-TODO create parking lot (init)
-TODO create known vehicles and users and cards (init)
-TODO use case: request parking space (class)
+WIP TODO jsp: request parking space
+WIP TODO jsp: show occupied spaces
+TODO jsp: exit parking space
+
+TODO make parking lot a Singleton/server!
+WIP TODO create parking space type subclasses (attribs/methods)
+
+NOT NOW TODO create known vehicles and users and cards (init)
+
+WIP TODO use case: request parking space (class)
 - enter card# or license#
 -- Guests have guest cards with id# guest1-guest10
 (wish: if electric, request confirmation for need for electric space, and pay based on used time??)
 - app checks availability and assigns space to user
 - reports assigned space#
-TODO use case: checkout parking space (class)
+
+TODO use case: exit parking space (class)
 - enter card# or license#
 - app frees space
 - reports "Thanks and goodbye. Your space # has been freed."
-TODO use case: show occupied spaces (class)
-TODO jsp: request parking space
-TODO jsp: show occupied spaces
-TODO jsp: checkout parking space
-TODO add interfaces
+-- duration, price (time, electricity)
+
+TODO Administrator use case: show occupied spaces (class)
+- license, car type, starttime, duration
+- creat REST GET resource 'show usage' and show on jsp
+
+DONE TODO add interfaces
+
 
 From our initial Excel List:
-
 DONE Create GIT repository
 DONE Create DB schema on DHOMDEV
 DONE Create scrumboard/backlog

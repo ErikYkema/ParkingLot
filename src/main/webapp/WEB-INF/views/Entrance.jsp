@@ -12,7 +12,7 @@
 	<form action="entrance" method="post" id="usrform">
      <table border="0">
        <tr>
-          <td><label>Please fill in car license</label><input type="text" id="licence" name="licence"> </td>
+          <td><label>Please fill in car license</label><input type="text" id="license" name="license"> </td>
           <td><input type="submit" class="btn btn-primary" value="Send"></td>
       </tr>
       </table>
