@@ -29,6 +29,7 @@ public class TestDerby
         createRestaurants();
         insertRestaurants(5, "LaVals", "Berkeley");
         selectRestaurants();
+        createParkingLotProperties();
         shutdown();
     }
 
@@ -70,6 +71,22 @@ public class TestDerby
         {
             Exceptions.handle(ex);
         }
+    }
+
+    private static void createParkingLotProperties()
+    {
+        LOG.debug("createParkingLotProperties");
+        try
+        {
+            stmt = conn.createStatement();
+            stmt.execute("create table ParkingLotProperties (id int, name VARCHAR(40), genericSize INT, electricSize INT)");
+            stmt.close();
+        }
+        catch (Exception ex)
+        {
+            Exceptions.handle(ex, "X0Y32");
+        }
+
     }
 
     private static void insertRestaurants(int id, String restName, String cityName)

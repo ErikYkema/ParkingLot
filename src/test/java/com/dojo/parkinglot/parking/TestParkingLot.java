@@ -30,7 +30,8 @@ public class TestParkingLot {
     @Test
     public void testUsage() {
         LOG.info ("start");
-        for (int i=0; i<5; i++) {
+        for (int i=0; i<3; i++) {
+            LOG.info(String.format("i: %s", i));
             GenericCar car = new GenericCar(new Date().toString());
             assertTrue("cannot get parking space", parkingLot.requestParkingSpace(car));
             LOG.info(ToStringBuilder.reflectionToString(parkingLot.getFreeSpaceCounter()));

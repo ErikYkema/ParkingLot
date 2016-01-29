@@ -1,7 +1,13 @@
 package com.dojo.parkinglot.model.repository;
 
-/**
- * Created by eykema on 1/29/16.
- */
-public class ParkingLotRepository {
+import com.dojo.parkinglot.model.ParkingLotProperties;
+
+import java.util.Collection;
+
+public interface ParkingLotRepository {
+    Integer saveProperties(ParkingLotProperties properties);
+
+    Collection<ParkingLotProperties> getAllProperties();
+
+    ParkingLotProperties getPropertiesById(int id);
 }

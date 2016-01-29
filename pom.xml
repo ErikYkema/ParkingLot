@@ -71,6 +71,11 @@
             <artifactId>derby</artifactId>
             <version>10.12.1.1</version>
         </dependency>
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
 
         <!--CODE QUALITY-->
         <dependency>
@@ -107,6 +112,17 @@
             <version>${org.springframework.version}</version>
             <!--<scope>test</scope>-->
         </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${org.springframework.version}</version>
+        </dependency>
+
 
         <!--Logging-->
         <dependency>
