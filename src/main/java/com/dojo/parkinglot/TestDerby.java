@@ -39,8 +39,8 @@ public class TestDerby
         {
             Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
             //Get a connection
-            String protocol = "jdbc:derby:";
-            conn = DriverManager.getConnection(protocol + "derbyDB;create=true", null);
+            String protocol = "jdbc:derby:" + "derbyDB;create=true";
+            conn = DriverManager.getConnection(protocol, null);
         }
         catch (Exception except)
         {

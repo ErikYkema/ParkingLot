@@ -10,4 +10,7 @@ public interface ParkingLotRepository {
     Collection<ParkingLotProperties> getAllProperties();
 
     ParkingLotProperties getPropertiesById(int id);
+
+    ParkingLotProperties getPropertiesByName(String name);
+
 }

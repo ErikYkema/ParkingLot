@@ -9,12 +9,14 @@ import java.sql.SQLException;
 public class Exceptions {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
     public static void handle (Exception ex) {
         handle(ex, "");
     }
+
     public static void handle (Exception ex, String acceptedSQLState) {
         if (ex instanceof SQLException) {
-            SQLException  sqlEx = (SQLException) ex;
+            SQLException sqlEx = (SQLException) ex;
             LOG.info(
                     String.format("errorCode %s sqlstate %s message %s ",
                             sqlEx.getErrorCode(), sqlEx.getSQLState(), sqlEx.getMessage()));
@@ -25,6 +27,9 @@ public class Exceptions {
                 throw new RuntimeException(ex.getCause());
             }
 
+        } else if (ex instanceof RuntimeException && ex.getCause() instanceof SQLException) {
+            LOG.warn("Runtime Exception with nested SQLException...");
+            handle((SQLException) ex.getCause(), acceptedSQLState);
         } else {
             LOG.error(ex.getMessage());
             throw new RuntimeException(ex.getMessage());
