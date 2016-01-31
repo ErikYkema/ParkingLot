@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import java.lang.invoke.MethodHandles;
+import java.util.UUID;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -22,7 +23,7 @@ public class ParkingLotJdbcRepositoryTest {
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @Autowired
-    ParkingLotJdbcRepository repository;
+    ParkingLotRepository repository;
     @Autowired
     ParkingLotProperties properties;
 
@@ -47,13 +48,17 @@ public class ParkingLotJdbcRepositoryTest {
 
     @Test
     public void testSavePropertiesGetByName() throws Exception {
-        properties.setName(ParkingLotJdbcRepository.PARKING_LOT_NAME);
+        String name = UUID.randomUUID().toString();
+        LOG.debug(String.format("Name: %s", name));
+        properties.setName(name);
         properties.setGenericSize(1);
         properties.setElectricSize(2);
         properties.setId(repository.saveProperties(properties));
-        ParkingLotProperties propertiesByName = repository.getPropertiesByName(ParkingLotJdbcRepository.PARKING_LOT_NAME);
+        ParkingLotProperties propertiesByName = repository.getPropertiesByName(name);
         LOG.debug("fetched: "+ propertiesByName.toString());
-        //assertThat(propertiesByName, is(properties)); // TODO implement equals/hashcode
+        // TODO implement equals/hashcode
+        assertThat(propertiesByName.getId(), is(properties.getId()));
+        assertThat(propertiesByName.getName(), is(properties.getName()));
     }
 
     @Test

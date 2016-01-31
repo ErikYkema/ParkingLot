@@ -3,7 +3,7 @@ package com.dojo.parkinglot.model;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("properties")
 public class ParkingLotProperties {
     private int genericSize;
 

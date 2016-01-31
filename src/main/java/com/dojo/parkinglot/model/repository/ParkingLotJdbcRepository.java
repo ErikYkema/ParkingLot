@@ -18,7 +18,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-@Component
+@Component("parkingLotRepository")
 public class ParkingLotJdbcRepository implements ParkingLotRepository {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
@@ -29,24 +29,24 @@ public class ParkingLotJdbcRepository implements ParkingLotRepository {
     private static final String PROPERTIES_TABLE = "PARKINGLOTPROPERTIES";
     public static final String PARKING_LOT_NAME = "DanielDogShed";
 
+    public ParkingLotJdbcRepository() {
+        LOG.debug("constructor...");
+    }
+
     @Autowired
     ParkingLotProperties properties;
 
     @Autowired
-    public void setDataSource(DataSource dataSource) {
+    public void setDataSource(DataSource dataSources) {
+        LOG.debug("setDataSource...");
 
-        template = new JdbcTemplate(dataSource);
+        template = new JdbcTemplate(dataSources);
 
-        insert = new SimpleJdbcInsert(dataSource)
+        insert = new SimpleJdbcInsert(dataSources)
                 .withTableName(PROPERTIES_TABLE)
                 .usingColumns("name", "genericSize", "electricSize")
                 .usingGeneratedKeyColumns("id");
 
-    }
-
-    public enum Feature {
-        DROP_AND_CREATE,
-        CREATE_TABLES_IF_NEEDED;
     }
 
     public void setup(Feature feature) {
@@ -69,11 +69,16 @@ public class ParkingLotJdbcRepository implements ParkingLotRepository {
         }
     }
 
+    /*
+    clears out the current data and reloads the application setup
+     */
     public void seed() {
-        template.execute("delete table " + PROPERTIES_TABLE);
+        template.execute("delete from " + PROPERTIES_TABLE);
+
         properties.setName(PARKING_LOT_NAME);
-        properties.setGenericSize(10);
-        properties.setGenericSize(3);
+        properties.setGenericSize(11);
+        properties.setElectricSize(3);
+        properties.setId(saveProperties(properties));
     }
 
 
@@ -118,6 +123,9 @@ public class ParkingLotJdbcRepository implements ParkingLotRepository {
 
     @Override
     public ParkingLotProperties getPropertiesByName(String name) {
+        if (template == null) {
+            throw new RuntimeException("template is null!");
+        }
         return template.queryForObject("select * from " + PROPERTIES_TABLE + " where name=?"
                 , new PropertiesRowMapper(), name);
     }

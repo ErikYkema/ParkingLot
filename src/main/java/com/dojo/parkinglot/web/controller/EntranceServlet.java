@@ -2,12 +2,13 @@ package com.dojo.parkinglot.web.controller;
 
 import com.dojo.parkinglot.domain.car.GenericCar;
 import com.dojo.parkinglot.domain.car.Vehicle;
+import com.dojo.parkinglot.model.repository.ParkingLotRepository;
 import com.dojo.parkinglot.parking.ParkingLot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,9 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
-/**
- * Created by oriezebos on 18-1-2016.
- */
+@Scope("singelton")
+@Component
 @WebServlet(urlPatterns = "/entrance")
 public class EntranceServlet extends HttpServlet{
 
@@ -32,10 +32,27 @@ public class EntranceServlet extends HttpServlet{
                 httpServletRequest, httpServletResponse);
     }
 
+//    @Autowired // doesn't work$@$#!
+//    ParkingLotRepository parkingLotRepository;
+
+    @Autowired // doesn't work$@$#!
+    ParkingLot parkingLot;
+
+    public EntranceServlet() {
+        LOG.debug("constructor...");
+        // TODO grab beans from applicationContext... as injection doesn't work... or make it somehow a singleton
+    }
+
+    @Autowired
+    public EntranceServlet(ParkingLotRepository parkingLotRepository, ParkingLot parkingLot) {
+        LOG.debug("constructor with arguments...");
+        this.parkingLot = parkingLot;
+//        this.parkingLotRepository = parkingLotRepository;
+    }
+
     @Override
     protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
 
-        ParkingLot parkingLot = ParkingLot.getParkingLot();
 
         String license = httpServletRequest.getParameter("license");
         boolean result;

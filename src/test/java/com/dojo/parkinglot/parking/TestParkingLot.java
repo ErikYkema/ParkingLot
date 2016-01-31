@@ -1,7 +1,9 @@
 package com.dojo.parkinglot.parking;
 
 import com.dojo.parkinglot.domain.car.GenericCar;
+import com.dojo.parkinglot.model.repository.ParkingLotRepository;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -22,9 +24,19 @@ public class TestParkingLot {
     private final static Logger LOG =
             LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-    ParkingLot parkingLot = ParkingLot.getParkingLot();
+    @Autowired
+    ParkingLot parkingLot; // = ParkingLot.getParkingLot();
+    @Autowired
+    ParkingLotRepository parkingLotRepository;
     @Autowired
     GenericCar car;
+
+    @Before
+    public void setUp() {
+        parkingLotRepository.setup(ParkingLotRepository.Feature.CREATE_TABLES_IF_NEEDED);
+        parkingLotRepository.seed();
+        parkingLot.init();
+    }
 
     // integration test
     @Test
