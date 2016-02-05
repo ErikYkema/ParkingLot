@@ -53,7 +53,7 @@ public class ParkingLotJdbcRepository implements ParkingLotRepository {
         switch (feature) {
             case DROP_AND_CREATE:
                 try {
-                    template.execute("drop table " +PROPERTIES_TABLE);
+                    template.execute("drop table " + PROPERTIES_TABLE);
                 } catch (Exception ex) {
                     Exceptions.handle(ex, "X0Y32");
                 }
