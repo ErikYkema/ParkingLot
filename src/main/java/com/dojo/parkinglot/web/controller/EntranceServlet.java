@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
-@Scope("singelton")
+@Scope("singleton")
 @Component
 @WebServlet(urlPatterns = "/entrance")
 public class EntranceServlet extends HttpServlet{
@@ -38,10 +38,10 @@ public class EntranceServlet extends HttpServlet{
     @Autowired // doesn't work$@$#!
     ParkingLot parkingLot;
 
-    public EntranceServlet() {
-        LOG.debug("constructor...");
-        // TODO grab beans from applicationContext... as injection doesn't work... or make it somehow a singleton
-    }
+//    public EntranceServlet() {
+//        LOG.debug("constructor...");
+//        // TODO grab beans from applicationContext... as injection doesn't work... or make it somehow a singleton
+//    }
 
     @Autowired
     public EntranceServlet(ParkingLotRepository parkingLotRepository, ParkingLot parkingLot) {
