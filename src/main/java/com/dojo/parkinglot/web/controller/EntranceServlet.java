@@ -7,20 +7,19 @@ import com.dojo.parkinglot.parking.ParkingLot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.ws.rs.Path;
 import java.io.IOException;
 import java.lang.invoke.MethodHandles;
 
-@Scope("singleton")
 @Component
-@WebServlet(urlPatterns = "/entrance")
+//@WebServlet(urlPatterns = "/entrance") // not compatible with Spring autowiring
+@Path("entrance")
 public class EntranceServlet extends HttpServlet{
 
     private final static Logger LOG =
@@ -38,10 +37,11 @@ public class EntranceServlet extends HttpServlet{
     @Autowired // doesn't work$@$#!
     ParkingLot parkingLot;
 
-//    public EntranceServlet() {
-//        LOG.debug("constructor...");
-//        // TODO grab beans from applicationContext... as injection doesn't work... or make it somehow a singleton
-//    }
+    // if default constructor missing, errors out on <init> missing...
+    public EntranceServlet() {
+        LOG.debug("constructor...");
+        // TODO grab beans from applicationContext... as injection doesn't work... or make it somehow a singleton
+    }
 
     @Autowired
     public EntranceServlet(ParkingLotRepository parkingLotRepository, ParkingLot parkingLot) {

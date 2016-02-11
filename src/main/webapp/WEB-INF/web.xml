@@ -1,20 +1,61 @@
 <!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://java.sun.com/xml/ns/javaee"
          xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
 
+    <!--seems not needed... -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>WEB-INF/applicationContext.xml</param-value>
     </context-param>
 
+    <!-- sets up Spring application context and processes annotations -->
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+    <!--weave spring and servlets together, both rest and web resources -->
+    <servlet>
+        <servlet-name>parkinglot-rest</servlet-name>
+        <!-- removing this fails in No Class In Holder UnavailableException -->
+        <servlet-class>
+            com.sun.jersey.spi.spring.container.servlet.SpringServlet
+        </servlet-class>
+        <!--Spring: seems not needed-->
+        <!--<init-param>-->
+        <!--<param-name>com.sun.jersey.config.property.resourceConfigClass</param-name>-->
+        <!--<param-value>com.sun.jersey.api.core.PackagesResourceConfig</param-value>-->
+        <!--</init-param>-->
+        <!--REST: -->
+        <init-param>
+            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-value>com.dojo.parkinglot.endpoint.v1.rest</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>parkinglot-rest</servlet-name>
+        <url-pattern>/rest/*</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>parkinglot-web</servlet-name>
+        <servlet-class>
+            com.dojo.parkinglot.web.controller.EntranceServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>parkinglot-web</servlet-name>
+        <url-pattern>/web/entrance/*</url-pattern>
+    </servlet-mapping>
 
 </web-app>
 

@@ -192,6 +192,35 @@
             <version>3.0.1</version>
             <!--<scope>provided</scope>-->
         </dependency>
+        <!--not needed?-->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>1.19</version>
+        </dependency>
+        <!--not needed?-->
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-servlet</artifactId>
+            <version>1.19</version>
+        </dependency>
+        <!--adding this breaks the test spring context...:
+        the scope should be: not-test (but that doesn't exist...-->
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-spring</artifactId>
+            <version>1.19</version>
+        </dependency>
+        <!--and this is a leaner REST dependency that works for the tests... but breaks jetty:run
+        java.lang.ClassNotFoundException: com.sun.jersey.spi.spring.container.servlet.SpringServlet -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>2.0.1</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
 
     <reporting>
